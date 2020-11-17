@@ -10,8 +10,7 @@ public class Main {
     public static void main(String[] args) throws IOException {
 
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
-        //String userInput = bufferedReader.readLine();
-        String userInput = "4 + 8";
+        String userInput = bufferedReader.readLine();
         bufferedReader.close();
         Calculator calculator = new Calculator(userInput);
 

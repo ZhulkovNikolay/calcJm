@@ -33,8 +33,31 @@ public class RomanNumbers {
         return result;
     }
 
-    public final static String toRoman(int arab) {
-        return romanMap.get(arab);
+    public final static String toRoman(int number) {
+        int l = romanMap.floorKey(number);
+        if (number == l) {
+            return romanMap.get(number);
+        }
+        return romanMap.get(l) + toRoman(number - l);
     }
 
+
 }
+
+
+/*
+    public final static String to1Roman(int arab) {
+        //IX + V = 14 (XIV)
+
+        if (arab <= 10) {
+            return romanMap.get(arab);
+        } else {
+            int decimal = arab / 10;
+            System.out.println(decimal);
+            int digit = arab % 10;
+            System.out.println(digit);
+            StringBuilder sb = new StringBuilder();
+            String result = sb.append(romanMap.get(decimal*10)).append(romanMap.get(digit)).toString();
+            return result;
+        }
+    }*/

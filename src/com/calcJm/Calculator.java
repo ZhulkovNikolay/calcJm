@@ -21,16 +21,19 @@ public class Calculator {
             }
         }
 
-        //если пользователь ввел числа не арабские,
-        //тогда переводим введенные римские в арабские, чтобы можно было считать
         if (!isArab) {
             this.a = RomanNumbers.toArab(words[0]);
             this.b = RomanNumbers.toArab(words[2]);
             this.sign = words[1];
+            if (!RomanNumbers.romanMap.containsValue(words[0]) || !RomanNumbers.romanMap.containsValue(words[2]) )
+                throw new IllegalArgumentException("User input numbers must be I-X");
+
+
         } else {
             this.a = Integer.parseInt(words[0]);
             this.b = Integer.parseInt(words[2]);
             this.sign = words[1];
+            if (a > 10 || b >10) throw new IllegalArgumentException("User input numbers must be 1-10");
         }
     }
 
