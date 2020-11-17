@@ -1,20 +1,40 @@
 package com.calcJm;
 
-import java.util.ArrayList;
+import java.util.Map;
+import java.util.TreeMap;
 
-enum RomanNumbers {
-        I(1), IV(4), V(5), IX(9), X(10),
-        XL(40), L(50), XC(90), C(100),
-        CD(400), D(500), CM(900), M(1000);
+public class RomanNumbers {
 
+    final static TreeMap<Integer, String> romanMap = new TreeMap<Integer, String>();
 
-    private int value;
-    RomanNumbers(int value) {
-        this.value = value;
+    static {
+        romanMap.put(10, "X");
+        romanMap.put(9, "IX");
+        romanMap.put(8, "VIII");
+        romanMap.put(7, "VII");
+        romanMap.put(6, "VI");
+        romanMap.put(5, "V");
+        romanMap.put(4, "IV");
+        romanMap.put(3, "III");
+        romanMap.put(2, "II");
+        romanMap.put(1, "I");
     }
 
-    static ArrayList<RomanNumbers> getReverseSortedValues() {
-        return null;
+    public final static int toArab(String roman) {
+        int result = 0;
+        for (Map.Entry<Integer, String> entry : romanMap.entrySet()) {
+            int key = entry.getKey();
+            String value = entry.getValue();
+
+            if (roman.equals(value)) {
+                result = key;
+            }
+        }
+        return result;
+    }
+
+    public final static String toRoman(int arab) {
+        return romanMap.get(arab);
     }
 
 }

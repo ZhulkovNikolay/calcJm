@@ -3,6 +3,7 @@ package com.calcJm;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Map;
 
 public class Main {
 
@@ -10,7 +11,7 @@ public class Main {
 
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
         //String userInput = bufferedReader.readLine();
-        String userInput = "66 / 33";
+        String userInput = "4 + 8";
         bufferedReader.close();
         Calculator calculator = new Calculator(userInput);
 
@@ -20,5 +21,6 @@ public class Main {
             case "*" -> System.out.println(userInput + " = " + calculator.mult());
             case "/" -> System.out.println(userInput + " = " + calculator.div());
         }
+
     }
 }
