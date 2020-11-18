@@ -11,6 +11,7 @@ public class Main {
 
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
         String userInput = bufferedReader.readLine();
+       // String userInput = "IX * VI";
         bufferedReader.close();
         Calculator calculator = new Calculator(userInput);
 

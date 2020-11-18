@@ -8,6 +8,14 @@ public class RomanNumbers {
     final static TreeMap<Integer, String> romanMap = new TreeMap<Integer, String>();
 
     static {
+        romanMap.put(1000, "M");
+        romanMap.put(900, "CM");
+        romanMap.put(500, "D");
+        romanMap.put(400, "CD");
+        romanMap.put(100, "C");
+        romanMap.put(90, "XC");
+        romanMap.put(50, "L");
+        romanMap.put(40, "XL");
         romanMap.put(10, "X");
         romanMap.put(9, "IX");
         romanMap.put(8, "VIII");
